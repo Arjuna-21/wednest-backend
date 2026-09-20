@@ -7,15 +7,17 @@ import nodemailer from 'nodemailer';
 import multer from 'multer';
 import { v2 as cloudinary } from 'cloudinary'
 import "dotenv/config";
-// import './venue.css'
 
+console.log("DB HOST:", process.env.DB_HOST);
+console.log("DB DATABASE:", process.env.DB_DATABASE);
+console.log("DB PORT:", process.env.DB_PORT);
 
 const pool = new Pool({
-    user: "postgres",
-    host: "localhost",
-    database: "venue",
-    password: "arjuna21",
-    port: 5432
+    user: process.env.DB_USER,
+    host: process.env.DB_HOST,
+    database: process.env.DB_DATABASE,
+    password: process.env.DB_PASSWORD,
+    port: process.env.DB_PORT
 });
 
 const app = express();
