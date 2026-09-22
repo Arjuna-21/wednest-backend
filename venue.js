@@ -8,10 +8,6 @@ import multer from 'multer';
 import { v2 as cloudinary } from 'cloudinary'
 import "dotenv/config";
 
-console.log("DB HOST:", process.env.DB_HOST);
-console.log("DB DATABASE:", process.env.DB_DATABASE);
-console.log("DB PORT:", process.env.DB_PORT);
-
 const pool = new Pool({
     user: process.env.DB_USER,
     host: process.env.DB_HOST,
@@ -25,7 +21,9 @@ const pool = new Pool({
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+    origin : "https://wednestsite.netlify.app"
+}));
 app.use(express.json());
 
 //Cloudinary 
