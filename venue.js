@@ -248,7 +248,6 @@ app.get(`/bookings/:userId`, async (req, res) => {
 
 // NODEMAILER
 const transporter = nodemailer.createTransport({
-    service: "gmail",
     host: "smtp.gmail.com",
     port: 587,
     secure: false,
